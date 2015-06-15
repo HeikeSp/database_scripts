@@ -1,4 +1,4 @@
--- query for FW and DW of JKI greenhouse (first) trial
+-- query for FW and DW of MPI field trial 2011 and 2012
 SELECT
 Base.plant_id,
 Base.experiment_id,
@@ -26,7 +26,7 @@ FROM (
      A.sample_date
      FROM aliquots A
      INNER JOIN aliquot_plants AP ON AP.aliquot_id = A.id
-     INNER JOIN plants PL ON PL.id = AP.plant_id AND PL.culture_id = 45985
+     INNER JOIN plants PL ON PL.id = AP.plant_id AND PL.culture_id in (44443, 56726)
      INNER JOIN cultures C ON C.id = PL.culture_id
      LEFT JOIN phenotype_plants PP ON PP.plant_id = PL.id
      LEFT JOIN phenotypes P ON P.id = PP.phenotype_id
