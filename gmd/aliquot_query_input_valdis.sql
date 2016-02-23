@@ -6,3 +6,4 @@ FROM            GC_Chromatogram INNER JOIN
                          Sample ON Vial.FK_sample = Sample.id AND Vial.FK_sample = Sample.id INNER JOIN
                          tf.SampleInfo ON Sample.id = tf.SampleInfo.FK_Sample AND Sample.id = tf.SampleInfo.FK_Sample
 WHERE        (GC_Chromatogram.Comment LIKE '%valdis%' OR GC_Chromatogram.Comment LIKE  '%trost2%') AND (tf.SampleInfo.attribute = 'Aliquot_ID') AND tf.SampleInfo.value != 'NA'
+ORDER BY tf.SampleInfo.value
