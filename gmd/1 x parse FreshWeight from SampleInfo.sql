@@ -8,14 +8,14 @@ FROM         Vial INNER JOIN
                       GC_Chromatogram ON Vial.FK_chromatogram = GC_Chromatogram.id AND Vial.FK_chromatogram = GC_Chromatogram.id INNER JOIN
                       tf.IntensityValue ON GC_Chromatogram.id = tf.IntensityValue.FK_chromatogram AND GC_Chromatogram.id = tf.IntensityValue.FK_chromatogram AND 
                       GC_Chromatogram.id = tf.IntensityValue.FK_chromatogram
-WHERE     (tf.IntensityValue.FK_TagList = 'F6690F71-804A-44FB-A326-47707F0D96C2')
+WHERE     (tf.IntensityValue.FK_TagList = '28E8889D-CE69-4796-8BE0-938529395916')
 
 --was gibt es als sample info
 SELECT distinct Vial.FK_chromatogram, tf.SampleInfo.attribute, tf.SampleInfo.value
 FROM            Vial INNER JOIN
                          tf.IntensityValue ON Vial.FK_chromatogram = tf.IntensityValue.FK_chromatogram INNER JOIN
                          tf.SampleInfo ON Vial.FK_sample = tf.SampleInfo.FK_Sample
-WHERE        (tf.IntensityValue.FK_TagList = 'F6690F71-804A-44FB-A326-47707F0D96C2') and attribute in ('Amount [g(FW)]  (initial weight)')
+WHERE        (tf.IntensityValue.FK_TagList = '28E8889D-CE69-4796-8BE0-938529395916') and attribute in ('Amount [g(FW)]  (initial weight)')
 order by attribute
 
 
@@ -27,7 +27,7 @@ SELECT DISTINCT tf.SampleInfo.FK_Sample AS sample, cast(tf.SampleInfo.value as f
 FROM         tf.SampleInfo RIGHT OUTER JOIN
                       Vial ON tf.SampleInfo.FK_Sample = Vial.FK_sample RIGHT OUTER JOIN
                       tf.IntensityValue ON Vial.FK_chromatogram = tf.IntensityValue.FK_chromatogram
-WHERE     (tf.IntensityValue.FK_TagList = 'F6690F71-804A-44FB-A326-47707F0D96C2') AND (tf.SampleInfo.attribute = 'Amount [g(FW)]  (initial weight)') -- (tf.SampleInfo.attribute = 'Amount [g(FW)] (keep empty)')
+WHERE     (tf.IntensityValue.FK_TagList = '28E8889D-CE69-4796-8BE0-938529395916') AND (tf.SampleInfo.attribute = 'Amount [g(FW)]  (initial weight)') -- (tf.SampleInfo.attribute = 'Amount [g(FW)] (keep empty)')
 AND tf.SampleInfo.value <> 'NA'
 
 
@@ -43,7 +43,7 @@ FROM         tf.SampleInfo RIGHT OUTER JOIN
                       Sample ON tf.SampleInfo.FK_Sample = Sample.id RIGHT OUTER JOIN
                       Vial ON Sample.id = Vial.FK_sample AND Sample.id = Vial.FK_sample RIGHT OUTER JOIN
                       tf.IntensityValue ON Vial.FK_chromatogram = tf.IntensityValue.FK_chromatogram
-WHERE     (tf.IntensityValue.FK_TagList = 'F6690F71-804A-44FB-A326-47707F0D96C2') AND (tf.SampleInfo.attribute = 'Amount [g(FW)]  (initial weight)') AND 
+WHERE     (tf.IntensityValue.FK_TagList = '28E8889D-CE69-4796-8BE0-938529395916') AND (tf.SampleInfo.attribute = 'Amount [g(FW)]  (initial weight)') AND 
                       (Sample.amount_value IS NULL) AND tf.SampleInfo.value <> 'NA'
                       
  

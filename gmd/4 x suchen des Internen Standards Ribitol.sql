@@ -5,7 +5,7 @@
 welche Internen Standards sind für diesem Experiment bereits annotiert
 */
 
-select * from tf.InternalStandards where FK_TagList = 'F6690F71-804A-44FB-A326-47707F0D96C2'
+select * from tf.InternalStandards where FK_TagList = '28E8889D-CE69-4796-8BE0-938529395916'
 
 /*
 wir suchen die QUANTITATIVEN cluster von Ribitol/Sorbitol
@@ -14,7 +14,7 @@ SELECT DISTINCT Analyte.id as [analyte id], Analyte.name, tf.MST.Cluster, tf.MST
 FROM         tf.MSTAnnotation INNER JOIN
                       Analyte ON tf.MSTAnnotation.FK_Analyte = Analyte.id INNER JOIN
                       tf.MST ON tf.MSTAnnotation.FK_TagList = tf.MST.FK_TagList AND tf.MSTAnnotation.FK_MST = tf.MST.ID
-WHERE     (tf.MSTAnnotation.FK_TagList = 'F6690F71-804A-44FB-A326-47707F0D96C2') AND (Analyte.name LIKE N'%sorbitol%') AND 
+WHERE     (tf.MSTAnnotation.FK_TagList = '28E8889D-CE69-4796-8BE0-938529395916') AND (Analyte.name LIKE N'%sorbitol%') AND 
                       (tf.MSTAnnotation.[Is Quantitative Cluster] = 1) 
 
 /*
@@ -29,7 +29,7 @@ SELECT DISTINCT
 FROM         tf.MSTAnnotation INNER JOIN
                       tf.MST ON tf.MSTAnnotation.FK_TagList = tf.MST.FK_TagList AND tf.MSTAnnotation.FK_MST = tf.MST.ID INNER JOIN
                       Analyte ON tf.MSTAnnotation.FK_Analyte = Analyte.id
-WHERE     (tf.MSTAnnotation.FK_TagList = 'F6690F71-804A-44FB-A326-47707F0D96C2') AND (tf.MSTAnnotation.FK_Analyte = 'C391707B-E687-477D-9BF9-A3EA182D8DA4') AND (tf.MSTAnnotation.[Is Quantitative Cluster] = 1)
+WHERE     (tf.MSTAnnotation.FK_TagList = '28E8889D-CE69-4796-8BE0-938529395916') AND (tf.MSTAnnotation.FK_Analyte = 'C391707B-E687-477D-9BF9-A3EA182D8DA4') AND (tf.MSTAnnotation.[Is Quantitative Cluster] = 1)
 )
 --select * from a 
 INSERT INTO [tf].[InternalStandards]
