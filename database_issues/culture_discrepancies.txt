@@ -1,0 +1,10 @@
+Name	Description	Study Id	Plants_in_LIMS	LIMS_Status	Plants_in_Phenotyper_DB
+KOEHL-230212-7	Feldanbau 2012 Attingen	56878	68	alive	73
+KOEHL-230212-13	Feldanbau 2012 Schrobenhausen	56884	68	alive	372
+KOEHL-130511-13	Field trial Buetow 2011	47110	71	alive	72
+KOEHL-130511-18	Field trial Schrobenhausen 2011	47115	68	alive	72
+KOEHL-230212-6	Feld Dethlingen 2012	56877	204	alive	226
+KOEHL-150212-6	MPIFeld2012	56726	304	dead	0
+KOEHL-141011-5	MPITest2	51790	200	dead	0
+KOEHL-060212-7	Pruef1	56575	408	alive	416
+KOEHL-140912-8	Pruef3	60319	408	alive	312
